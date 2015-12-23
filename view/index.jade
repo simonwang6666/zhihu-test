@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    link(href = 'sass/index.css' rel = 'stylesheet' type = 'text/css')
+    script('src = js/jquery-1.11.3.js')
+    script('src = js/control.js')
+
+   
+  body
+    div(class = 'main clearfix')
+      div(class = 'top')
+        div(class = 'search_box' ,contenteditable = 'true') 请输入想要邀请的人
+        div(class = 'show_name') 您已邀请了
+          span(id = 'name') #{name}
+          span   等
+          span(id = 'num')     #{num}
+          span   人
+      h3 推荐人选
+      div(class = 'bottom',id = 'content')
+      
+        ul(id = 'users',class = 'clearfix')
+          each user in users.recommended
+            li
+              img(src = encodeURIComponent(user.avatarUrl))
+              div(class = 'aside')
+                h4(id = 'name'+ encodeURIComponent(user.id))=user.name
+                p=user.bio
+              a(class = 'button',invited = 'n',href = '/invite/'+encodeURIComponent(user.id)) 发出邀请
+          
+          
+        

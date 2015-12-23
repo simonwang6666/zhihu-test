@@ -1,0 +1,115 @@
+@mixin size($width,$height){
+	width:$width;
+	height:$height;
+}
+@mixin float-left{
+	float:left;
+}
+@mixin float-right{
+	float:right;
+}
+*{
+	margin:0;
+	padding:0;
+}
+.clearfix:after{
+	content:'.';
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+p{
+	line-height:20px;
+}
+body{
+	font-family:"微软雅黑";
+	.main{
+		margin:0 auto;
+		width:1000px;
+		border:1px solid #ccc;
+		border-radius:3px;
+		overflow:hidden;
+		.top{
+			margin-left:20px;
+			margin-top:20px;
+			.search_box{
+				width:200px;
+				height:15px;
+				line-height:15px;
+				padding:10px;
+				display:inline-block;
+				border:1px solid #ccc;;
+				font-size:14px;
+				color:#999;
+				vertical-align:central;
+				border-radius:3px;
+				box-shadow:0 1px #CCC inset;
+			}
+			.show_name{
+				display:inline-block;
+				padding:10px;
+				vertical-align:central;
+				color:#999;
+				#name{
+				color:#39F;
+				}
+			}
+		}
+		h3{
+			font-size:28px;
+			margin-left:20px;
+			margin-top:20px
+		}
+		.bottom{
+			position:relative;
+			margin:20px;
+			width:960px;
+			margin-bottom:0px;
+			ul{
+				list-style:none;
+				li{
+					width:480px;
+					@include float-left;
+					padding:10px 0 30px 0;
+					margin-top:1px;
+					border-bottom:1px solid #f9f9f9;
+					img{
+						@include float-left;
+						@include size(50px,50px);
+					}
+					.aside{
+						@include float-left;
+						margin-left:10px;
+						margin-top:5px;
+						h4{
+							color:#39F;
+							font-size:18px;
+							margin-bottom:5px;
+							lint-height:20px;
+						}
+
+					}
+					.button{
+							display:block;
+							@include float-right;
+							margin:10px 30px 0 0;
+							padding:5px;
+							box-shadow:0 0 100px #0000FF inset;
+							border-radius:5px;
+							color:#dad9d2;
+							cursor:pointer;
+							text-decoration:none;
+							:hover{
+								text-decoration:none;
+							}
+						}
+						.button1{
+							@extend .button;
+							box-shadow:0 0 100px #333 inset;
+						}
+				}
+			}
+		}
+			}
+		}
